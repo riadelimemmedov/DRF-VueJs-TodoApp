@@ -38,6 +38,7 @@ def taskDetailUpdate(request,pk):
     except:
         return HttpResponse(status=status.HTTP_400_BAD_REQUEST)
     if(request.method == 'PUT'):
+        #PUT == UPDATE method
         print('Update Olmadan Once ', request.data)
         serializer = TaskSerializer(task,data=request.data)
         if serializer.is_valid():
